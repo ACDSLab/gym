@@ -280,6 +280,12 @@ register(
 )
 
 register(
+    id='Arm-v0',
+    entry_point='gym.envs.mujoco:ArmEnv',
+    max_episode_steps=1000,
+)
+
+register(
     id='Humanoid-v2',
     entry_point='gym.envs.mujoco:HumanoidEnv',
     max_episode_steps=1000,
