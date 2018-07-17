@@ -1,8 +1,9 @@
 
 <mujocoinclude>
     <body name="wam/ball_hand">
-        <geom type="cylinder" size="0.042 0.005" pos="0 0 0.071"/>
-        <geom type="cylinder" size="0.005 0.06" pos="0 0 0.125"/>
-        <geom type="sphere" size="0.025" pos="0 0 0.175"/>
+        <!--<geom type="cylinder" size="0.1 0.00001" pos="0 0 0.065"/>-->
+        <geom type="cylinder" size="0.043 0.005" pos="0 0 0.070"/>
+        <geom type="cylinder" size="0.006 0.05" pos="0 0 0.115"/>
+        <geom type="sphere" size="0.0254" pos="0 0 0.160"/>
     </body>
 </mujocoinclude>
