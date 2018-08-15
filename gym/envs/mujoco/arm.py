@@ -4,7 +4,7 @@ from gym.envs.mujoco import mujoco_env
 
 
 class ArmEnv(mujoco_env.MujocoEnv, utils.EzPickle):
-    FRAME_SKIP = 2
+    FRAME_SKIP = 5
     JOINTS = ['wam/' + joint for joint in ['base_yaw_joint',
                                            'shoulder_pitch_joint',
                                            'shoulder_yaw_joint',
@@ -42,10 +42,8 @@ class ArmEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         return np.concatenate([qpos, qvel])
 
     def reset_model(self):
-        qpos = self.init_qpos
-        qvel = self.init_qvel
-        # qpos = self.init_qpos + self.np_random.uniform(low=-.000, high=.005, size=self.model.nq)
-        # qvel = self.init_qvel + self.np_random.uniform(low=-.005, high=.005, size=self.model.nv)
+        qpos = self.init_qpos + self.np_random.uniform(low=-.000, high=.005, size=self.model.nq)
+        qvel = self.init_qvel + self.np_random.uniform(low=-.005, high=.005, size=self.model.nv)
         self.set_state(qpos, qvel)
         for joint, offset in self.JOINT_OFFSET.items():
             pos = self.sim.data.get_joint_qpos(joint)

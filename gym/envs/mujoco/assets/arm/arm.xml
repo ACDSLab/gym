@@ -132,7 +132,7 @@
                                         <joint name="wam/palm_yaw_joint" range="-3 3" damping="0.11"/>
                                         <geom class="viz" mesh="wrist_palm_link_fine"/>
                                         <geom class="col" mesh="wrist_palm_link_convex"/>
-                                        <include file="ball_hand.xml"/>
+                                        <!--<include file="ball_hand.xml"/>-->
                                     </body>
                                 </body>
                             </body>
@@ -142,13 +142,29 @@
             </body>
         </body>
     </worldbody>
-        <actuator>
-        <motor ctrllimited="true" ctrlrange="-1 1" gear="42.0" joint="wam/base_yaw_joint"/>
-        <motor ctrllimited="true" ctrlrange="-1 1" gear="28.25" joint="wam/shoulder_pitch_joint"/>
-        <motor ctrllimited="true" ctrlrange="-1 1" gear="28.25" joint="wam/shoulder_yaw_joint"/>
-        <motor ctrllimited="true" ctrlrange="-1 1" gear="18.0" joint="wam/elbow_pitch_joint"/> <!-- What is the little n3? -->
-        <motor ctrllimited="true" ctrlrange="-1 1" gear="9.48" joint="wam/wrist_yaw_joint"/>
-        <motor ctrllimited="true" ctrlrange="-1 1" gear="9.48" joint="wam/wrist_pitch_joint"/>
-        <motor ctrllimited="true" ctrlrange="-1 1" gear="14.93" joint="wam/palm_yaw_joint"/>
+    <actuator>
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="42.0" joint="wam/base_yaw_joint"/>-->
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="28.25" joint="wam/shoulder_pitch_joint"/>-->
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="28.25" joint="wam/shoulder_yaw_joint"/>-->
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="18.0" joint="wam/elbow_pitch_joint"/> &lt;!&ndash; What is the little n3? &ndash;&gt;-->
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="9.48" joint="wam/wrist_yaw_joint"/>-->
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="9.48" joint="wam/wrist_pitch_joint"/>-->
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="14.93" joint="wam/palm_yaw_joint"/>-->
+
+        <motor ctrllimited="true" ctrlrange="-40 40" gear="1" joint="wam/base_yaw_joint"/>
+        <motor ctrllimited="true" ctrlrange="-40 40" gear="1" joint="wam/shoulder_pitch_joint"/>
+        <motor ctrllimited="true" ctrlrange="-40 40" gear="1" joint="wam/shoulder_yaw_joint"/>
+        <motor ctrllimited="true" ctrlrange="-40 40" gear="1" joint="wam/elbow_pitch_joint"/>
+        <motor ctrllimited="true" ctrlrange="-40 40" gear="1" joint="wam/wrist_yaw_joint"/>
+        <motor ctrllimited="true" ctrlrange="-40 40" gear="1" joint="wam/wrist_pitch_joint"/>
+        <motor ctrllimited="true" ctrlrange="-40 40" gear="1" joint="wam/palm_yaw_joint"/>
+
+        <!--<position kp="500" joint="wam/base_yaw_joint"/>-->
+        <!--<position kp="3000" joint="wam/shoulder_pitch_joint"/>-->
+        <!--<position kp="100" joint="wam/shoulder_yaw_joint"/>-->
+        <!--<position kp="2000" joint="wam/elbow_pitch_joint"/>-->
+        <!--<position kp="100" joint="wam/wrist_yaw_joint"/>-->
+        <!--<position kp="100" joint="wam/wrist_pitch_joint"/>-->
+        <!--<position kp="100" joint="wam/palm_yaw_joint"/>-->
     </actuator>
 </mujoco>
